@@ -7,8 +7,12 @@ public class Welcome {
 			return "Hello, my friend";
 		}
 		input = input.trim();
-		String name = input.substring(0, 1).toUpperCase() + input.substring(1);
-		return "Hello, " + name;
+		if (input.equals(input.toUpperCase())) {
+			return "HELLO, " + input + " !";
+		} else {
+			String name = input.substring(0, 1).toUpperCase() + input.substring(1);
+			return "Hello, " + name;
+		}
 
 	}
 
