@@ -3,16 +3,13 @@ package ilu2;
 public class Welcome {
 
 	public static String welcome(String input) {
-		if (input == null) {
-			throw new IllegalArgumentException("Le chaine de carctère du nom  ne peut pas être null");
+		if (input == null || input.trim().isEmpty()) {
+			return "Hello, my friend";
 		}
-		// Vérifier que le paramètre n'est pas vide
-		if (input.isEmpty()) {
-			throw new IllegalArgumentException("La chaine de carctère du nom ne peut pas être vide");
-		}
+		input = input.trim();
 		String name = input.substring(0, 1).toUpperCase() + input.substring(1);
-		// Retourner la chaîne "Hello, <nom>"
 		return "Hello, " + name;
+
 	}
 
 }
