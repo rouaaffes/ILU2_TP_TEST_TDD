@@ -20,6 +20,7 @@ public class Welcome {
 			input = input.trim();
 			String name = input.substring(0, 1).toUpperCase() + input.substring(1);
 			return "Hello, " + name;
+
 		}
 	}
 

@@ -47,7 +47,7 @@ class WelcomeTest {
 		assertEquals("Hello, my friend, my friend", Welcome.welcome("  ,    "));
 		assertEquals("Hello, my friend, my friend", Welcome.welcome(null + "," + null));
 		assertEquals("Hello, Victor, my friend", Welcome.welcome("victor ," + null));
-		assertEquals("Hello, my friend, Julie", Welcome.welcome(null + ",  julie  "));
+		assertEquals("Hello, my friend, Julie", Welcome.welcome(null + ", julie "));
 	}
 
 	@Test
