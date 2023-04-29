@@ -99,4 +99,13 @@ class WelcomeTest {
 				"Hello, my friend, my friend, my friend, my friend, Angelo, my friend, Amélie and my friend.AND HELLO, AMINE AND JEAN !",
 				Welcome.welcome(null + ",   ,  ," + null + ", angelo ,   , amélie ," + null + ",AMINE,JEAN"));
 	}
+
+	@Test
+	// mon travail respecte déja l'exigence numéro 8
+	void test_EX8() {
+		assertEquals("AND HELLO, ELODIE, JANET AND JULIE !", Welcome.welcome("ELODIE ,      JANET,      JULIE "));
+		assertEquals("Hello, MaRCOS, Antoine and Meriam", Welcome.welcome("    MaRCOS   ,   antoine  , meriam "));
+		assertEquals("Hello, MaRCOS, my friend, Antoine, Meriam and my friend.AND HELLO, NICOLAS !",
+				Welcome.welcome("    MaRCOS  ,NICOLAS  ,   ,   antoine  , meriam ," + null));
+	}
 }
