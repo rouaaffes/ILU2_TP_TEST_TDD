@@ -1,5 +1,6 @@
 package ilu2;
 
+//welcom
 public class Welcome {
 
 	public static String welcome(String input) {
