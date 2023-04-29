@@ -1,6 +1,6 @@
 package ilu2;
 
-//welcom
+//welcome 
 public class Welcome {
 
 	public static String welcome(String input) {
@@ -8,13 +8,9 @@ public class Welcome {
 			return "Hello, my friend";
 		}
 		if (input.contains(",")) {
-			String resultat = "Hello, ";
 			String[] names = input.split(",");
-			for (int i = 0; i < names.length - 1; i++) {
-				resultat = resultat + traitement_nom(names[i]);
-				resultat = resultat + ", ";
-			}
-			return resultat + traitement_nom(names[names.length - 1]);
+			return traitement_chaine_minuscule_majuscule(names);
+
 		} else if (input.trim().equals(input.trim().toUpperCase())) {
 			return "HELLO, " + input.trim() + " !";
 		} else {
@@ -39,4 +35,24 @@ public class Welcome {
 		return input;
 	}
 
+	private static String traitement_chaine_minuscule_majuscule(String[] names) {
+		String chaine_minuscule = "Hello, ";
+		String chaine_majuscule = "AND HELLO, ";
+		for (int i = 0; i < names.length; i++) {
+			String name = traitement_nom(names[i]);
+			if (name.equals(name.toUpperCase())) {
+				chaine_majuscule = chaine_majuscule + name + ", ";
+			} else {
+				chaine_minuscule = chaine_minuscule + name + ", ";
+			}
+		}
+		if (chaine_minuscule == "Hello, ") {
+			return chaine_majuscule.substring(0, chaine_majuscule.length() - 2) + " !";
+		}
+		if (chaine_majuscule == "AND HELLO, ") {
+			return chaine_minuscule.substring(0, chaine_minuscule.length() - 2);
+		}
+		return chaine_minuscule.substring(0, chaine_minuscule.length() - 2) + "."
+				+ chaine_majuscule.substring(0, chaine_majuscule.length() - 2) + " !";
+	}
 }

@@ -65,4 +65,17 @@ class WelcomeTest {
 				Welcome.welcome(null + ",   ,  ," + null + ", angelo ,   , amélie ," + null));
 
 	}
+
+	@Test
+	void test_EX6() {
+		assertEquals(
+				"Hello, my friend, my friend, my friend, my friend, my friend, Amélie, my friend.AND HELLO, ANGELO !",
+				Welcome.welcome(null + ", , ," + null + ", ANGELO , , amélie ," + null));
+		assertEquals("Hello, Amélie, Maram, Hugo.AND HELLO, VICTOR, CHRESTINE !",
+				Welcome.welcome("amélie , VICTOR ,maram , CHRESTINE  ,   hugo "));
+		assertEquals("Hello, Amine.AND HELLO, NICOLAS !", Welcome.welcome(" amine , NICOLAS"));
+		assertEquals("Hello, my friend.AND HELLO, JULIE !", Welcome.welcome(null + ", JULIE "));
+		assertEquals("AND HELLO, ELODIE, JANET, JULIE !", Welcome.welcome("ELODIE , JANET, JULIE "));
+
+	}
 }
