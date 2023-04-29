@@ -23,7 +23,7 @@ public class Welcome {
 	}
 
 	private static boolean chaine_null_ou_vide(String input) {
-		return input == null || input.trim().isEmpty();
+		return input == null || input.trim().isEmpty() || input.equals("null");
 	}
 
 	private static String traitement_nom(String input) {
